@@ -11,5 +11,11 @@ pipeline{
 				sh 'lsblk'
 			}
 		}
+		stage('Steeve-System-Analysis'){
+			steps{
+				sh 'ps -ef'
+				sh 'sudo systemctl status Jenkins'
+			}
+		}
 		}
 	}
