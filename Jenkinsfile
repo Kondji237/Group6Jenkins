@@ -9,7 +9,6 @@ pipeline{
 		stage('Divine-Disc-Management'){
 			steps{
 				sh 'lsblk'
-				sh 'df -f'
 			}
 		}
 		}
