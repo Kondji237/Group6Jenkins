@@ -14,8 +14,8 @@ pipeline{
 		stage('Steeve-System-Analysis'){
 			steps{
 				sh 'ps -ef'
-				sh 'sudo systemctl status Jenkins'
+				sh 'sudo systemctl status jenkins'
 			}
 		}
-		}
 	}
+}
