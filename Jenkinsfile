@@ -11,6 +11,21 @@ pipeline{
 				sh 'lsblk'
 			}
 		}
+		stage('parallel-test'){
+		parallel{
+		stage('unitest'){
+			steps{
+				sh 'lscpu'
+				sh 'df -h'
+			}
+		}
+		stage('deploy'){
+			steps{
+				echo "we are on pipeline as code module"
+			}
+		}
+			}
+		}
 		stage('Steeve-System-Analysis'){
 			steps{
 				sh 'ps -ef'
