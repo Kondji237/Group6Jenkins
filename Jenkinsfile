@@ -1,5 +1,7 @@
 pipeline{
-	agent any 
+	agent {
+		label 'slave1'
+	}
 	stages{
 		stage('clonecode'){
 			steps{
@@ -20,6 +22,9 @@ pipeline{
 			}
 		}
 		stage('deploy'){
+			agent{
+				label 'slave2'
+			}
 			steps{
 				echo "we are on pipeline as code module"
 			}
@@ -27,6 +32,9 @@ pipeline{
 			}
 		}
 		stage('Steeve-System-Analysis'){
+			agent{
+				label 'slave1'
+			}
 			steps{
 				sh 'ps -ef'
 				sh 'sudo systemctl status jenkins'
