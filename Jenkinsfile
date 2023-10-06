@@ -32,9 +32,12 @@ pipeline{
 			}
 		}
 		stage('Steeve-System-Analysis'){
+			agent{
+				label 'slave1'
+			}
 			steps{
 				sh 'ps -ef'
-				sh 'sudo systemctl status jenkins'
+				echo "welcome"
 			}
 		}
 	}
